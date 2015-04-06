@@ -63,7 +63,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L../SID/dist/Release/GNU-Linux-x86 -lSID
+LDLIBSOPTIONS=-L../SID/dist/Release/GNU-Linux-x86 -Wl,-rpath,../SID/dist/Release/GNU-Linux-x86 -lSID `pkg-config --libs sdl2` `pkg-config --libs SDL2_image` `pkg-config --libs SDL2_mixer` `pkg-config --libs gl`  
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -71,67 +71,67 @@ LDLIBSOPTIONS=-L../SID/dist/Release/GNU-Linux-x86 -lSID
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/coo: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/coo ${OBJECTFILES} ${LDLIBSOPTIONS} -lSDL2_image -lSDL2_mixer `sdl2-config --cflags --libs`
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/coo ${OBJECTFILES} ${LDLIBSOPTIONS} -s
 
 ${OBJECTDIR}/biome_default.o: biome_default.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Werror -s -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/biome_default.o biome_default.cpp
+	$(COMPILE.cc) -O3 -Werror -s `pkg-config --cflags sdl2` `pkg-config --cflags SDL2_image` `pkg-config --cflags SDL2_mixer` `pkg-config --cflags gl` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/biome_default.o biome_default.cpp
 
 ${OBJECTDIR}/biome_hills.o: biome_hills.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Werror -s -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/biome_hills.o biome_hills.cpp
+	$(COMPILE.cc) -O3 -Werror -s `pkg-config --cflags sdl2` `pkg-config --cflags SDL2_image` `pkg-config --cflags SDL2_mixer` `pkg-config --cflags gl` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/biome_hills.o biome_hills.cpp
 
 ${OBJECTDIR}/biome_land_mass.o: biome_land_mass.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Werror -s -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/biome_land_mass.o biome_land_mass.cpp
+	$(COMPILE.cc) -O3 -Werror -s `pkg-config --cflags sdl2` `pkg-config --cflags SDL2_image` `pkg-config --cflags SDL2_mixer` `pkg-config --cflags gl` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/biome_land_mass.o biome_land_mass.cpp
 
 ${OBJECTDIR}/clickmode_panel.o: clickmode_panel.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Werror -s -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/clickmode_panel.o clickmode_panel.cpp
+	$(COMPILE.cc) -O3 -Werror -s `pkg-config --cflags sdl2` `pkg-config --cflags SDL2_image` `pkg-config --cflags SDL2_mixer` `pkg-config --cflags gl` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/clickmode_panel.o clickmode_panel.cpp
 
 ${OBJECTDIR}/debug_pane.o: debug_pane.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Werror -s -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/debug_pane.o debug_pane.cpp
+	$(COMPILE.cc) -O3 -Werror -s `pkg-config --cflags sdl2` `pkg-config --cflags SDL2_image` `pkg-config --cflags SDL2_mixer` `pkg-config --cflags gl` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/debug_pane.o debug_pane.cpp
 
 ${OBJECTDIR}/game.o: game.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Werror -s -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/game.o game.cpp
+	$(COMPILE.cc) -O3 -Werror -s `pkg-config --cflags sdl2` `pkg-config --cflags SDL2_image` `pkg-config --cflags SDL2_mixer` `pkg-config --cflags gl` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/game.o game.cpp
 
 ${OBJECTDIR}/game_menu.o: game_menu.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Werror -s -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/game_menu.o game_menu.cpp
+	$(COMPILE.cc) -O3 -Werror -s `pkg-config --cflags sdl2` `pkg-config --cflags SDL2_image` `pkg-config --cflags SDL2_mixer` `pkg-config --cflags gl` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/game_menu.o game_menu.cpp
 
 ${OBJECTDIR}/loading_screen.o: loading_screen.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Werror -s -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/loading_screen.o loading_screen.cpp
+	$(COMPILE.cc) -O3 -Werror -s `pkg-config --cflags sdl2` `pkg-config --cflags SDL2_image` `pkg-config --cflags SDL2_mixer` `pkg-config --cflags gl` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/loading_screen.o loading_screen.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Werror -s -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -O3 -Werror -s `pkg-config --cflags sdl2` `pkg-config --cflags SDL2_image` `pkg-config --cflags SDL2_mixer` `pkg-config --cflags gl` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 ${OBJECTDIR}/main_menu.o: main_menu.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Werror -s -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main_menu.o main_menu.cpp
+	$(COMPILE.cc) -O3 -Werror -s `pkg-config --cflags sdl2` `pkg-config --cflags SDL2_image` `pkg-config --cflags SDL2_mixer` `pkg-config --cflags gl` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main_menu.o main_menu.cpp
 
 ${OBJECTDIR}/mission_planner.o: mission_planner.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Werror -s -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/mission_planner.o mission_planner.cpp
+	$(COMPILE.cc) -O3 -Werror -s `pkg-config --cflags sdl2` `pkg-config --cflags SDL2_image` `pkg-config --cflags SDL2_mixer` `pkg-config --cflags gl` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/mission_planner.o mission_planner.cpp
 
 ${OBJECTDIR}/pause_menu.o: pause_menu.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -Werror -s -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/pause_menu.o pause_menu.cpp
+	$(COMPILE.cc) -O3 -Werror -s `pkg-config --cflags sdl2` `pkg-config --cflags SDL2_image` `pkg-config --cflags SDL2_mixer` `pkg-config --cflags gl` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/pause_menu.o pause_menu.cpp
 
 # Subprojects
 .build-subprojects:
