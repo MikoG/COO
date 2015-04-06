@@ -53,7 +53,7 @@ void game::init_engine() {
     this->_m_Camera->set_center_screen(this->_m_Display->get_window_width(),
             this->_m_Display->get_window_height());
 
-    std::string strTexPath2 = "./assets/textures/loading_screen.png";
+    std::string strTexPath2 = "assets/textures/loading_screen.png";
     object::add_texture(strTexPath2, 1, 0);
     this->_m_Forms->add_form(new loading_screen());
     sid::init_frame_2d();
@@ -63,7 +63,6 @@ void game::init_engine() {
     this->load_gametextures();
     this->load_fonts();
     this->load_music();
-    SDL_Delay(2000);
     this->_m_Forms->remove_form("loading_screen");
     sid::init_frame_3d(60, 2000);
     this->render_3d();
@@ -159,20 +158,20 @@ void game::run_gameloop() {
  *
  */
 void game::load_gametextures() {
-    std::string strTexPath500 = "./assets/textures/terrain1.png";
+    std::string strTexPath500 = "assets/textures/terrain1.png";
     object::add_texture(strTexPath500, 500, texture::SID_TEX_FLAG_GEN_MIPMAPS);
 
-    std::string strTexPath100 = "./assets/textures/objbrows_bg.png";
-    std::string strTexPath101 = "./assets/textures/menubar_bg.png";
-    std::string strTexPath102 = "./assets/textures/mode_corner.png";
-    std::string strTexPath103 = "./assets/textures/btn_clickmode_fight_off.png";
-    std::string strTexPath104 = "./assets/textures/btn_clickmode_fight_on.png";
-    std::string strTexPath105 = "./assets/textures/btn_clickmode_build_off.png";
-    std::string strTexPath106 = "./assets/textures/btn_clickmode_build_on.png";
-    std::string strTexPath107 = "./assets/textures/btn_clickmode_terrain_off.png";
-    std::string strTexPath108 = "./assets/textures/btn_clickmode_terrain_on.png";
-    std::string strTexPath109 = "./assets/textures/btn_clickmode_query_off.png";
-    std::string strTexPath110 = "./assets/textures/btn_clickmode_query_on.png";
+    std::string strTexPath100 = "assets/textures/objbrows_bg.png";
+    std::string strTexPath101 = "assets/textures/menubar_bg.png";
+    std::string strTexPath102 = "assets/textures/mode_corner.png";
+    std::string strTexPath103 = "assets/textures/btn_clickmode_fight_off.png";
+    std::string strTexPath104 = "assets/textures/btn_clickmode_fight_on.png";
+    std::string strTexPath105 = "assets/textures/btn_clickmode_build_off.png";
+    std::string strTexPath106 = "assets/textures/btn_clickmode_build_on.png";
+    std::string strTexPath107 = "assets/textures/btn_clickmode_terrain_off.png";
+    std::string strTexPath108 = "assets/textures/btn_clickmode_terrain_on.png";
+    std::string strTexPath109 = "assets/textures/btn_clickmode_query_off.png";
+    std::string strTexPath110 = "assets/textures/btn_clickmode_query_on.png";
 
     object::add_texture(strTexPath100, 100, texture::SID_TEX_FLAG_MULTIPLY_ALPHA);
     object::add_texture(strTexPath101, 101, texture::SID_TEX_FLAG_MULTIPLY_ALPHA);
@@ -186,11 +185,12 @@ void game::load_gametextures() {
     object::add_texture(strTexPath109, 109, texture::SID_TEX_FLAG_MULTIPLY_ALPHA);
     object::add_texture(strTexPath110, 110, texture::SID_TEX_FLAG_MULTIPLY_ALPHA);
 
-    std::string strTexPath2 = "./assets/textures/main_menu_bg.png";
+    std::string strTexPath2 = "assets/textures/main_menu_bg.png";
     object::add_texture(strTexPath2, 2, texture::SID_TEX_FLAG_GEN_MIPMAPS);
     
-    sid::sidof* sidofCube = new sid::sidof("./assets/models/cube.sido");
-    sid::object_ingame::add_template(0, sidofCube);
+    sid::sidof* sidofCube = new sid::sidof("assets/models/cube.sido");
+    std::shared_ptr<sid::sido const> sidoCube = sidofCube->at(0);
+    sid::object_ingame::add_template(0, sidoCube);
     delete sidofCube;
 }
 
@@ -201,7 +201,7 @@ void game::load_fonts() {
     /* To Do: overload add_textures so that uiTexID can be passed by reference
      * and updated while texture is loaded. This should be much faster than 
      * searching for it, as coded below. */
-    std::string strTexPath1 = "./assets/textures/font1_small.png";
+    std::string strTexPath1 = "assets/textures/font1_small.png";
     this->_m_Forms->Textures.add_texture(strTexPath1, 1000, texture::SID_TEX_FLAG_MULTIPLY_ALPHA);
     uint uiTexID = this->_m_Forms->Textures.get_tex_id_by_ref(1000);
 

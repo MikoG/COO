@@ -19,6 +19,7 @@
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
+      <itemPath>assets/models/cube.sido</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -60,18 +61,30 @@
         <ccTool>
           <architecture>1</architecture>
           <standard>8</standard>
+          <preprocessorList>
+            <Elem>DEBUG</Elem>
+          </preprocessorList>
           <warningLevel>3</warningLevel>
         </ccTool>
         <linkerTool>
           <linkerAddLib>
             <pElem>../SID/dist/Debug/GNU-Linux-x86</pElem>
           </linkerAddLib>
+          <linkerDynSerch>
+            <pElem>../SID/dist/Debug/GNU-Linux-x86</pElem>
+          </linkerDynSerch>
           <linkerLibItems>
             <linkerLibLibItem>SID</linkerLibLibItem>
+            <linkerOptionItem>`pkg-config --libs sdl2`</linkerOptionItem>
+            <linkerOptionItem>`pkg-config --libs SDL2_mixer`</linkerOptionItem>
+            <linkerOptionItem>`pkg-config --libs SDL2_image`</linkerOptionItem>
+            <linkerOptionItem>`pkg-config --libs gl`</linkerOptionItem>
+            <linkerOptionItem>`pkg-config --libs glu`</linkerOptionItem>
           </linkerLibItems>
-          <commandLine>-lSDL2_image -lSDL2_mixer `sdl2-config --cflags --libs`</commandLine>
         </linkerTool>
       </compileType>
+      <item path="assets/models/cube.sido" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="biome_default.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="biome_default.h" ex="false" tool="3" flavor2="0">
@@ -146,12 +159,21 @@
           <linkerAddLib>
             <pElem>../SID/dist/Release/GNU-Linux-x86</pElem>
           </linkerAddLib>
+          <linkerDynSerch>
+            <pElem>../SID/dist/Release/GNU-Linux-x86</pElem>
+          </linkerDynSerch>
+          <stripSymbols>true</stripSymbols>
           <linkerLibItems>
             <linkerLibLibItem>SID</linkerLibLibItem>
+            <linkerOptionItem>`pkg-config --libs sdl2`</linkerOptionItem>
+            <linkerOptionItem>`pkg-config --libs SDL2_image`</linkerOptionItem>
+            <linkerOptionItem>`pkg-config --libs SDL2_mixer`</linkerOptionItem>
+            <linkerOptionItem>`pkg-config --libs gl`</linkerOptionItem>
           </linkerLibItems>
-          <commandLine>-lSDL2_image -lSDL2_mixer `sdl2-config --cflags --libs`</commandLine>
         </linkerTool>
       </compileType>
+      <item path="assets/models/cube.sido" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="biome_default.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="biome_default.h" ex="false" tool="3" flavor2="0">

@@ -1,8 +1,23 @@
 # This is a comment.
 tree {
-    model {
 
-        is_model = true;
+    type = 1;
+    min_crew = 0;
+    max_crew = 0;
+    hitpoints = 127;
+    shieldpoints = 0;
+    weapon_slots = 0;
+    mass = 0.0;
+    force = 0.0;
+    traction = 0.0;
+    width = 0.0;
+    length = 0.0;
+    max_gradient = 0.0;
+    land_enabled = false;
+    water_enabled = false;
+    mounting_point = 0;
+
+    model {
 
         vboid = 1;
 
@@ -32,23 +47,17 @@ tree {
                 0.0, 0.0
             }
 
-		    indices = {
-			    0, 1, 2
-		    }
+            indices = {
+                    0, 1, 2
+            }
 
             colors = {
                 128, 255, 64, 255
             }
-
         }
 
-        nested_model_1 {
-		    is_model = true;
-
-        }
-
-        nested_model_2 {
-		    is_model = true;
+        sub_models {
+            
         }
     }
 }
